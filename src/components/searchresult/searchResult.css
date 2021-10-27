@@ -1,0 +1,27 @@
+.searchResult {
+  background-color: #ddd;
+  color: #333;
+  border-radius: 5px;
+}
+
+.searchResult ul {
+  list-style: none;
+  padding: 0;
+}
+
+.searchResult ul li {
+  padding: 10px 5px 10px 0px;
+  color: black;
+  font-weight: 500;
+}
+
+ul li:hover {
+  background-color: #1877f2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.searchResultText {
+  padding: 0 20px;
+}

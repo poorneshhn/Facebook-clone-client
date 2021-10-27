@@ -1,0 +1,6 @@
+.preloader {
+  height: 100vh;
+  width: 100vw;
+  background: white url(/loadingGIFs/facebookLoading1.gif) no-repeat center
+    center;
+}

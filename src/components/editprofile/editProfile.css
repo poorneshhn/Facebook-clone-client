@@ -1,0 +1,98 @@
+.editProfile,
+.closeModal,
+.saveDetails {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: white;
+  background-color: #1775ee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+}
+
+.editProfile:hover,
+.closeModal:hover,
+.saveDetails:hover {
+  background-color: rgba(23, 117, 238, 0.8);
+}
+
+.editProfile:active,
+.closeModal:active,
+.saveDetails:active {
+  background-color: #0d5fc9;
+}
+
+.editProfileText {
+  margin-right: 3px;
+  font-size: 16px;
+}
+
+.editIcon {
+  font-size: 20px !important;
+}
+
+.modal {
+  position: relative;
+  max-width: 70%;
+  max-height: 95%;
+  left: 220px;
+  right: 150px;
+
+  background-color: white;
+  font-size: 20px;
+  color: #555;
+  margin: 0px;
+  padding: 0px;
+}
+
+.overlay {
+  z-index: 2;
+  background-color: rgba(27, 26, 26, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.profileEditTitle {
+  text-align: center;
+  padding: 15px 0 0 0;
+}
+
+.profileEditHr {
+  width: 75%;
+  margin-bottom: 30px;
+}
+
+.profileLabels {
+  margin-right: 10px;
+}
+
+.profileInputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.profileInputButtons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  padding: 0 0 20px 0;
+}
+
+.profileImageDemo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
