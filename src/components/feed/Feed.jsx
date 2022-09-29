@@ -35,7 +35,7 @@ function Feed({ user, profile, username }) {
               ? "Follow people to see their Posts!"
               : user === currentUser
               ? "Your uploaded Posts are visible here"
-              : `${username} has not uploaded any Posts!`}
+              : username && `${username} has not uploaded any Posts!`}
           </h2>
         )}
       </div>

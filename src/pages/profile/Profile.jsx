@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axiosInstance from "../../axiosInstance";
 import "./profile.css";
+import { isEmptyJson } from "../../utils/util";
 
 function Profile({ currentUser }) {
   const [user, setUser] = useState({});
@@ -23,46 +24,49 @@ function Profile({ currentUser }) {
   }, [userId]);
 
   return (
-    <>
-      <Topbar user={currentUser._id} />
-      <div className="profile">
-        <Sidebar />
-        <div className="profileRight">
-          <div className="profileRightTop">
-            <div className="profileCover">
-              <img
-                src={
-                  user.coverImagePresent
-                    ? `/api/users/cover/${userId}/image`
-                    : `/loadingGIFs/facebookLoading1.gif`
-                }
-                alt=""
-                className="profileCoverImg"
-              />
-              <img
-                src={
-                  user.profileImagePresent
-                    ? `/api/users/profile/${userId}/image`
-                    : `/images/noprofileImage.png`
-                }
-                alt=""
-                className="profileUserImg"
-              />
+    !isEmptyJson(user) && (
+      <>
+        <Topbar user={currentUser._id} />
+        <div className="profile">
+          <Sidebar />
+          <div className="profileRight">
+            <div className="profileRightTop">
+              <div className="profileCover">
+                <img
+                  src={
+                    user.coverImagePresent
+                      ? `/api/users/cover/${userId}/image`
+                      : `/loadingGIFs/facebookLoading1.gif`
+                  }
+                  alt=""
+                  className="profileCoverImg"
+                />
+                <img
+                  src={
+                    user.profileImagePresent
+                      ? `/api/users/profile/${userId}/image`
+                      : `/images/noprofileImage.png`
+                  }
+                  alt=""
+                  className="profileUserImg"
+                />
+              </div>
+              <div className="profileInfo">
+                <h4 className="profileInfoName">{user.username}</h4>
+                <span className="profileInfoDesc">
+                  {user.description ||
+                    "no description available, please update"}
+                </span>
+              </div>
             </div>
-            <div className="profileInfo">
-              <h4 className="profileInfoName">{user.username}</h4>
-              <span className="profileInfoDesc">
-                {user.description || "no description available, please update"}
-              </span>
+            <div className="profileRightBottom">
+              <Feed profile={true} user={user._id} username={user.username} />
+              <Rightbar user={user} profile={true} currentUser={currentUser} />
             </div>
-          </div>
-          <div className="profileRightBottom">
-            <Feed profile={true} user={user._id} username={user.username} />
-            <Rightbar user={user} profile={true} currentUser={currentUser} />
           </div>
         </div>
-      </div>
-    </>
+      </>
+    )
   );
 }
 

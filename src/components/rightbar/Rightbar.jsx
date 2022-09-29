@@ -18,7 +18,6 @@ function Rightbar({ user, profile, currentUser }) {
           `/api/users/followings/${user._id}`
         );
         setUserFriends(friends.data);
-        console.log(friends.data);
       } catch (error) {
         console.log(error.response);
       }
